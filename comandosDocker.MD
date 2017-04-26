@@ -45,3 +45,7 @@ para utilizar docker con mySql vamos a utilizar el siguiente comando
 POSTGRES_USER=dario -e POSTGRES_DB=Politecnica -p 
 5432:5432 -d postgres
 ```
+## MongoDB
+```
+>>docker run --name darioMongo -p 27017:27017 -d mongo
+```
