@@ -35,3 +35,14 @@ function hazAlgo(algo){
 hazAlgo(function () {
     console.log('hola')
 });
+
+function transformarNumero(numero,transformacion) {
+    transformacion(numero);
+
+}
+transformarNumero(5,function (numero) {
+    return numero*2;
+})
+transformarNumero(8,function (numero) {
+    return numero/2;
+})
