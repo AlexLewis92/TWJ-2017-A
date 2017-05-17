@@ -16,6 +16,10 @@ export class AppComponent{
     nombre:"Dario",
     apellido:" Naranjo"
 }
+
+url:string="https://angular.io";
+
+src:string="https://webdev.dartlang.org/angular/images/angulardart.svg";
 constructor(){
     console.log("constructor");
     this.holaMundo();
