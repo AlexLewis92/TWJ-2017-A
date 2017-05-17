@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'TWJ-A',
-  template: "<h1>hola Mundo</h1>",
+  templateUrl:'./app.component.html',
   styleUrls: ['./app.component.css']
 })
 
