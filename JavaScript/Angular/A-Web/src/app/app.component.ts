@@ -13,24 +13,27 @@ import { Component } from '@angular/core';
 
 export class AppComponent{
   usuario:UsuarioInt={
-    nombre:"Dario",
-    apellido:" Naranjo"
-}
+    nombre:"",
+    apellido:" Naranjo",
 
+}
+  parrafo:string="";
+  background:string="blue";
 url:string="https://angular.io";
 
 src:string="https://webdev.dartlang.org/angular/images/angulardart.svg";
 constructor(){
-    console.log("constructor");
-    this.holaMundo();
-    console.log(this.saludar(this.usuario.nombre,
-    this.usuario.apellido))
+  this.usuario.nombre="Alex";
+  this.parrafo="Mi mama me mima";
+  setTimeout(()=>{
+      this.usuario.nombre="Simon"
+  },3000)
 }
 holaMundo(){
   console.log("Hola Mundo");
 }
 saludar(nombre:string,
-apellido?:string):string{
+apellido?:string,parrafo?:string):string{
   return `Hola ${nombre}${apellido}`;
 }
 }
