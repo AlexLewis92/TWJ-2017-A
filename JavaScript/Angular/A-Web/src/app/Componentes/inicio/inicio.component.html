@@ -1,10 +1,43 @@
 
 <div class="container">
-  <!-- .row>.col-->
-<!--
-  <div class="row">
-    <!--col-tamaño-valor-->
+  <h1>BIENVENIDOS</h1>
+  <h2>Usuarios Conectados</h2>
+  <div  class="row">
+    <div  class="col-md-4" *ngFor="let usuario of arregloUsuarios">
+      <div class="card" style="width: 20rem;">
+        <div class="card-block">
+          <h4 class="card-title">{{usuario.nombre}}</h4>
+          <p class="card-text">{{usuario.nombre}}+ {{usuario.apellido}}</p>
+          <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div >
+    <ul>
+      <li *ngFor="let usuario of arregloUsuarios">{{usuario.nombre}}</li>
+    </ul>
+  </div>
+
   <!--
+    <input  placeholder="Ingrese Texto" type="text" [value]="nombre" #nombreEtiqueta>
+
+    <input  placeholder="Ingrese Texto" type="text" [(ngModel)]="nombre">
+    <img [src]="nombre" alt="">
+    {{nombre}}
+    <br>
+    <button class="btn btn-primary" (click)="cambiarNombre()">Cambiar valor</button>
+    <button (blur)="cambiarOtroNombre()">Cliknames</button>
+
+    <h1 (click)="cambiarNombreInput(nombreEtiqueta)">lenin a Rafico</h1>-->
+</div>
+  <!--
+  <!-- .row>.col
+
+  <div class="row">
+    <!--col-tamaño-valor
+
     <div style= "background-color: red;" class="col-sm-6">ROJO</div>
     <div style= "background-color: red;" class="col-sm-6">ROJO</div>
     <div style= "background-color: blue;" class="col-md-4">AZUL</div>
@@ -37,7 +70,7 @@
   <br>
   <br>
   <br>
--->
+
 <br>
   <div class="row">
     <div class="col-md-6">
@@ -141,7 +174,7 @@
 
 
 
-<!--
+
 p.rojo
 <p class="rojo"></p>
 p#verde
