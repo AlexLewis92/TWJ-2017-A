@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import {HttpModule} from "@angular/http";
 import { EstiloComponent } from './estilo/estilo.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
+import { PaginaComponent } from './Componentes/pagina/pagina.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EstiloComponent,
-    InicioComponent
+    InicioComponent,
+    PaginaComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +22,6 @@ import { InicioComponent } from './Componentes/inicio/inicio.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [InicioComponent]
+  bootstrap: [PaginaComponent ]
 })
 export class AppModule { }
