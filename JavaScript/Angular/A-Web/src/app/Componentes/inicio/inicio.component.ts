@@ -13,7 +13,7 @@ export class InicioComponent implements OnInit {
 
   nombre: string = 'Dario';
 
-  planetas=[];
+  planetas: PlanetasStarWars;
 
   arregloUsuarios = [
     {
@@ -81,8 +81,18 @@ export class InicioComponent implements OnInit {
       )
   }
 
+
 }
 
 interface PlanetasStarWars{
   name:string;
+  rotation_period: number;
+  orbital_period: number;
+  diameter: string;
+  climate: string;
+  gravity: string;
+  terrain: string;
+  surface_water: number;
+  population: string;
+
 }

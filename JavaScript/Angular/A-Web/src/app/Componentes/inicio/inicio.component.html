@@ -24,14 +24,19 @@
   <div class="row">
     <div *ngFor="let planeta of planetas">
 
-      <div class="col-md-4">
-        <ul>
-          <li>
-            <h1>{{planeta.name}}</h1>
-          </li>
-        </ul>
+      <figure class="figure">
+      <div  class="col-md-12">
+
+            <h1>Nombre:{{planeta.name}}</h1>
+            <h2>Periodo de rotacion:{{planeta.rotation_period}}</h2>
+            <h2>Periodo Orbital:{{planeta.orbital_period}}</h2>
+            <h2>Diametro:{{planeta.diameter}}</h2>
+            <h2>Clima:{{planeta.climate}}</h2>
+            <h2>Gravedad:{{planeta.gravity}}</h2>
+
       </div>
 
+      </figure>
     </div>
   </div>
   <!--

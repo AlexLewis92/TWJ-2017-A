@@ -8,13 +8,15 @@ import {HttpModule} from "@angular/http";
 import { EstiloComponent } from './estilo/estilo.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
 import { PaginaComponent } from './Componentes/pagina/pagina.component';
+import { PlanetasComponent } from './Componentes/planetas/planetas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EstiloComponent,
     InicioComponent,
-    PaginaComponent
+    PaginaComponent,
+    PlanetasComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { PaginaComponent } from './Componentes/pagina/pagina.component';
   ],
   providers: [],
 
-  bootstrap: [InicioComponent]
+  bootstrap: [PlanetasComponent]
 
 
 })
