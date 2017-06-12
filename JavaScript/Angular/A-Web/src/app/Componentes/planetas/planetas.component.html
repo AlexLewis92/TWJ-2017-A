@@ -15,7 +15,7 @@
 
 
 <div class="row">
-  <div *ngFor="let planeta of planetas">
+  <div *ngFor="let planeta of planetas;let indice=index">
   <div  class="col-lg-12">
           <br>
           <h1 style="color: green"><b>Planeta:</b> {{planeta.name}}</h1>
@@ -27,6 +27,11 @@
           <b>Terreno:</b> {{planeta.terrain}}<br>
           <b>Superficie de agua:</b> {{planeta.surface_water}}<br>
           <b>Población:</b> {{planeta.population}}<br>
+           <b> Residentes:
+          <p *ngFor="let residente of planeta.residents">
+          <li style="color: white">{{residente}}</li>
+          </p>
+          </b>
 
 
     </div>

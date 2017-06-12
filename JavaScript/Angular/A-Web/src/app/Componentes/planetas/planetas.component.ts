@@ -8,7 +8,7 @@ import {Http} from "@angular/http";
   styleUrls: ['./planetas.component.css']
 })
 export class PlanetasComponent implements OnInit {
-  planetas: PlanetasStarWars;
+  planetas: PlanetasStarWars[]=[];
 
   constructor(private _http:Http) { }
 
@@ -25,6 +25,13 @@ export class PlanetasComponent implements OnInit {
           let respuesta=response.json();
           console.log(respuesta.next);
           this.planetas=respuesta.results;
+          this.planetas=this.planetas.map(
+            (planeta)=>{
+
+              planeta.imagenURL ="/assets/Imagenes/"+planeta.name+'.jpg';
+              return planeta;
+          }
+          );
         },
         (error)=>{
           console.log("Response:",error);
@@ -54,6 +61,7 @@ interface PlanetasStarWars{
   created:string;
   edited: string;
   url: string;
+  imagenURL?:string;
 
 }
 
