@@ -1,52 +1,110 @@
-
 <div class="container">
-  <h1>BIENVENIDOS</h1>
-  <h2>Usuarios Conectados</h2>
-  <div  class="row">
-    <div  *ngFor="let usuario of arregloUsuarios"  >
-      <div class="col-md-4" *ngIf="usuario.conectado">
-        <div  class="card" style="width: 20rem;">
-          <div class="card-block">
-            <h4  class="card-title">{{usuario.nombre}} - {{usuario.conectado}}</h4>
-            <p  class="card-text">{{usuario.nombre}} + {{usuario.apellido}}</p>
-            <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
+  <h1>Bienvenidos</h1>
 
-  <h2>Planetas de Strar Wars</h2>
-<br>
-  <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
+  <h2>Usuarios</h2>
 
   <div class="row">
-    <div *ngFor="let planeta of planetas">
+    <div class="col-sm-6">
+      <div class="form-group">
 
-      <figure class="figure">
-      <div  class="col-md-12">
+        <!-- | = option + 2 MAC = alt+124 -->
+        <pre>
+          {{ nuevoUsuario | json }}
+        </pre>
 
-            <h1>Nombre:{{planeta.name}}</h1>
-            <h2>Periodo de rotacion:{{planeta.rotation_period}}</h2>
-            <h2>Periodo Orbital:{{planeta.orbital_period}}</h2>
-            <h2>Diametro:{{planeta.diameter}}</h2>
-            <h2>Clima:{{planeta.climate}}</h2>
-            <h2>Gravedad:{{planeta.gravity}}</h2>
 
+        <label class="col-form-label">Nombre Usuario:
+        </label>
+        <input class="form-control"
+               placeholder="Ingrese nuevo Nombre"
+               [(ngModel)]="nuevoUsuario.nombre" type="text">
       </div>
 
-      </figure>
+      <button class="btn btn-success"
+              (click)="crearUsuario()">
+        Crear usuario
+      </button>
+
     </div>
   </div>
+
+  <h3>Usuarios:</h3>
+
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let usuario of usuarios;let indice = index;">
+      <h3>{{usuario.nombre}}</h3>
+      <button class="btn btn-danger" (click)="eliminarUsuario(usuario,indice)"> Eliminar usuario</button>
+    </div>
+  </div>
+
+
+
+  <h2>Planetas</h2>
+
+  <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar Planetas</button>
+
+  <div class="row">
+    <div class="col-sm-4"
+         *ngFor="let planeta of planetas;let i = index;">
+
+      <app-planeta-star-wars [planeta]="planeta">
+
+      </app-planeta-star-wars>
+
+    </div>
+  </div>
+
+
   <!--
-  <p *ngIf="(1+1)==2">Hola</p>
-  <P *ngIf="(1+1)!==2">con una expresion Falsa</P>
-  <P *ngIf="0">con cero</P>
-  <P *ngIf="undefined">Undefined</P>
-  <P *ngIf="NULL">Con null</P>
-  <P *ngIf="nombre">NOMBRE</P>
--->
+  <div class="container">
+    <h1>BIENVENIDOS</h1>
+    <h2>Usuarios Conectados</h2>
+    <div  class="row">
+      <div  *ngFor="let usuario of arregloUsuarios"  >
+        <div class="col-md-4" *ngIf="usuario.conectado">
+          <div  class="card" style="width: 20rem;">
+            <div class="card-block">
+              <h4  class="card-title">{{usuario.nombre}} - {{usuario.conectado}}</h4>
+              <p  class="card-text">{{usuario.nombre}} + {{usuario.apellido}}</p>
+              <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Planetas de Strar Wars</h2>
+  <br>
+    <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
+
+    <div class="row">
+      <div *ngFor="let planeta of planetas">
+
+        <figure class="figure">
+        <div  class="col-md-12">
+
+              <h1>Nombre:{{planeta.name}}</h1>
+              <h2>Periodo de rotacion:{{planeta.rotation_period}}</h2>
+              <h2>Periodo Orbital:{{planeta.orbital_period}}</h2>
+              <h2>Diametro:{{planeta.diameter}}</h2>
+              <h2>Clima:{{planeta.climate}}</h2>
+              <h2>Gravedad:{{planeta.gravity}}</h2>
+
+        </div>
+
+        </figure>
+      </div>
+    </div>
+    <!--
+    <p *ngIf="(1+1)==2">Hola</p>
+    <P *ngIf="(1+1)!==2">con una expresion Falsa</P>
+    <P *ngIf="0">con cero</P>
+    <P *ngIf="undefined">Undefined</P>
+    <P *ngIf="NULL">Con null</P>
+    <P *ngIf="nombre">NOMBRE</P>
+  -->
 <!--
   <div >
     <ul>
@@ -66,6 +124,7 @@
 
     <h1 (click)="cambiarNombreInput(nombreEtiqueta)">lenin a Rafico</h1>-->
 </div>
+-->
   <!--
   <!-- .row>.col
 
