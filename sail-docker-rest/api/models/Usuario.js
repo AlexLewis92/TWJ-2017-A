@@ -6,9 +6,9 @@
  */
 
 module.exports = {
-
+  conection:'localDiskDb',
   attributes: {
- nombre:{
+  nombre:{
    type:'string'
  }
   }

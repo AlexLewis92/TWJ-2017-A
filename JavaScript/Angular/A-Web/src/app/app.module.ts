@@ -10,6 +10,11 @@ import { InicioComponent } from './Componentes/inicio/inicio.component';
 import { PaginaComponent } from './Componentes/pagina/pagina.component';
 import { PlanetasComponent } from './Componentes/planetas/planetas.component';
 import { PlanetaStarWarsComponent } from './Componentes/planeta-star-wars/planeta-star-wars.component';
+import { ClimateComponent } from './Componentes/climate/climate.component';
+import { DiameterComponent } from './Componentes/diameter/diameter.component';
+import { GravityComponent } from './Componentes/gravity/gravity.component';
+import { OrbitalPeriodComponent } from './Componentes/orbital-period/orbital-period.component';
+import { TerrainComponent } from './Componentes/terrain/terrain.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { PlanetaStarWarsComponent } from './Componentes/planeta-star-wars/planet
     InicioComponent,
     PaginaComponent,
     PlanetasComponent,
-    PlanetaStarWarsComponent
+    PlanetaStarWarsComponent,
+    ClimateComponent,
+    DiameterComponent,
+    GravityComponent,
+    OrbitalPeriodComponent,
+    TerrainComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ export class InicioComponent implements OnInit {
 
   usuarios:UsuarioClass[] = [];
 
-  nuevoUsuario:UsuarioClass = new UsuarioClass("");
+  nuevoUsuario:UsuarioClass = new UsuarioClass();
 
   planetas : PlanetaStarWarsInterface[] = []
 
@@ -43,7 +43,7 @@ export class InicioComponent implements OnInit {
     }
   ]
 
-  constructor(private _http:Http) {
+  constructor(private _http: Http) {
     //inicia la clase
     //PERO EL COMPONENTE NO ESTA LISTO
 
@@ -51,14 +51,14 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
   //AQUI SI ESTA LISTO EL COMPONENTE
     this._http
-      .get("http://localhost:1337/Usuario/")
+      .get('http://localhost:1337/Usuario')
       .subscribe(
         respuesta=>{
-          let rjson:UsuarioClass[] = respuesta.json();
-
+          //let rjson:UsuarioClass[] = respuesta.json();
+          const rjson: UsuarioClass[] = respuesta.json();
           this.usuarios = rjson;
 
-          console.log("Usuarios: ",this.usuarios);
+          console.log('Usuarios: ',this.usuarios);
         },
         error=>{
           console.log("Error: ",error)
@@ -123,11 +123,12 @@ export class InicioComponent implements OnInit {
      */
 
     this._http
-      .post("http://localhost:1337/Usuario",this.nuevoUsuario)
+      .post('http://localhost:1337/Usuario/',this.nuevoUsuario)
       .subscribe(
         respuesta=>{
-          let respuestaJson = respuesta.json();
-          console.log('respuestaJson: ',respuestaJson);
+          //let respuestaJson = respuesta.json();
+          //console.log('respuestaJson: ',respuestaJson);
+          this.usuarios.push(this.nuevoUsuario);
         },
         error=>{
           console.log("Error",error);
@@ -138,9 +139,20 @@ export class InicioComponent implements OnInit {
 
   eliminarUsuario(usuario:UsuarioClass,indice:number){
 
-    console.log("Indice:",this.usuarios.indexOf(usuario));
+    //console.log("Indice:",this.usuarios.indexOf(usuario));
 
-    console.log("Indice con index: ",indice);
+    //console.log("Indice con index: ",indice);
+
+    this._http.delete('http://localhost:1337/Usuario/${usuario.id}')
+      .subscribe(
+        respuesta => {
+          console.log('Indice con index: ', usuario.id);
+
+        },
+        error => {
+          console.log('Error', error);
+        }
+      );
 
 
   }

@@ -8,7 +8,7 @@ import {PlanetaStarWarsInterface} from "../../Interfaces/PlanetaStarWars";
 })
 export class PlanetaStarWarsComponent implements OnInit {
 
-  @Input() planeta:PlanetaStarWarsInterface
+  @Input() planeta:PlanetaStarWarsInterface;
   constructor() { }
 
   ngOnInit() {

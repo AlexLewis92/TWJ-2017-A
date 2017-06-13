@@ -6,11 +6,10 @@
  */
 
 module.exports = {
-conection:'conexionMysqlDocker',
+  conection:'localDiskDb',
   attributes: {
     nombre:{
       type:'string'
     }
   }
 };
-
