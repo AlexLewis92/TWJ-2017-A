@@ -30,7 +30,7 @@ module.exports.connections = {
   ***************************************************************************/
   localDiskDb: {
     adapter: 'sails-disk'
-  },
+  }
 
   /***************************************************************************
   *                                                                          *
@@ -46,7 +46,7 @@ module.exports.connections = {
     user: 'dario', //optional
   password: '123456', //optional
     database: 'dario' //optional
-  },
+  },*/
 
   /***************************************************************************
   *                                                                          *
@@ -63,7 +63,7 @@ module.exports.connections = {
   //   user: 'username', //optional
   //   password: 'password', //optional
   //   database: 'your_mongo_db_name_here' //optional
-  },
+  },*/
 
   /***************************************************************************
   *                                                                          *
@@ -80,7 +80,7 @@ module.exports.connections = {
     user: 'dario1', // optional
   password: '123456', // optional
   database: 'Politecnica' //optional
-  }
+  }*/
 
   /***************************************************************************
   *                                                                          *

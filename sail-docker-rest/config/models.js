@@ -19,6 +19,7 @@ module.exports.models = {
   ***************************************************************************/
   connection: 'localDiskDb',
 
+
   /***************************************************************************
   *                                                                          *
   * How and whether Sails will attempt to automatically rebuild the          *

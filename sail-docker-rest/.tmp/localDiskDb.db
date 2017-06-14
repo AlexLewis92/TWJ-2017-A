@@ -4,30 +4,22 @@
     "edificio": [],
     "usuario": [
       {
-        "createdAt": "2017-04-26T19:55:27.784Z",
-        "updatedAt": "2017-04-26T19:55:27.784Z",
-        "id": 1
-      },
-      {
         "nombre": "Dario",
         "createdAt": "2017-04-26T19:56:59.618Z",
         "updatedAt": "2017-04-26T19:56:59.618Z",
         "id": 2
       },
       {
-        "Nombre": "Alex",
-        "createdAt": "2017-05-02T20:34:34.049Z",
-        "updatedAt": "2017-05-02T20:34:34.049Z",
-        "id": 3
+        "nombre": "alex",
+        "createdAt": "2017-06-13T22:19:33.240Z",
+        "updatedAt": "2017-06-13T22:19:33.240Z",
+        "id": 12
       },
       {
-        "nombre": "Jem",
-        "Apellido": "Cartains",
-        "Cedula": "1234567890",
-        "edad": "24",
-        "createdAt": "2017-05-02T21:00:38.893Z",
-        "updatedAt": "2017-05-02T21:00:38.893Z",
-        "id": 5
+        "nombre": "Lizett",
+        "createdAt": "2017-06-14T03:58:19.486Z",
+        "updatedAt": "2017-06-14T03:58:19.486Z",
+        "id": 13
       }
     ]
   },
@@ -88,7 +80,7 @@
     "casa": {},
     "edificio": {},
     "usuario": {
-      "id": 5
+      "id": 13
     }
   }
 }
