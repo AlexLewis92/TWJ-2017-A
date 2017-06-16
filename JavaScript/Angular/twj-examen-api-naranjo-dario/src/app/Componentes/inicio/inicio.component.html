@@ -1,0 +1,14 @@
+<div style="background-image:url(http://k46.kn3.net/taringa/A/C/0/E/5/B/Xaviloz/F71.jpg)" align="center" class="container">
+<h2>Cargar Juegos</h2>
+<button style="color: #014c8c" class="btn btn-outline-success" (click)="cargarJuego()">Cargar juegos</button>
+
+<div class="row">
+  <div align="left" class="col-md-4"
+       *ngFor="let juego of juegos">
+
+    <app-juego [juego]="juego"></app-juego>
+
+  </div>
+</div>
+</div>
+
