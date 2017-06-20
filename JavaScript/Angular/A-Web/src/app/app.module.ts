@@ -15,6 +15,7 @@ import { DiameterComponent } from './Componentes/diameter/diameter.component';
 import { GravityComponent } from './Componentes/gravity/gravity.component';
 import { OrbitalPeriodComponent } from './Componentes/orbital-period/orbital-period.component';
 import { TerrainComponent } from './Componentes/terrain/terrain.component';
+import { UsuarioComponent } from './Componentes/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TerrainComponent } from './Componentes/terrain/terrain.component';
     DiameterComponent,
     GravityComponent,
     OrbitalPeriodComponent,
-    TerrainComponent
+    TerrainComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

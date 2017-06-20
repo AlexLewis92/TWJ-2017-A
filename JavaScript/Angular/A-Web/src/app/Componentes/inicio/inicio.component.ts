@@ -16,30 +16,30 @@ export class InicioComponent implements OnInit {
   nombre: string = "Dario";
 
 
-  usuarios:UsuarioClass[] = [];
+  usuarios: UsuarioClass[] = [];
 
-  nuevoUsuario:UsuarioClass = new UsuarioClass("");
+  nuevoUsuario: UsuarioClass = new UsuarioClass("");
 
-  planetas : PlanetaStarWarsInterface[] = []
+  planetas: PlanetaStarWarsInterface[] = []
 
   arregloUsuarios = [
     {
       nombre: "Dario",
       apellido: "Naranjo",
-      conectado:true
+      conectado: true
     }, {
       nombre: "Mashi",
       apellido: "Correa",
-      conectado:true
+      conectado: true
     }, {
       nombre: "Abdala",
       apellido: "Bucaran",
-      conectado:false
+      conectado: false
     },
     {
       nombre: "Juan",
       apellido: "Flores",
-      conectado:true
+      conectado: true
     }
   ]
 
@@ -48,20 +48,35 @@ export class InicioComponent implements OnInit {
     //PERO EL COMPONENTE NO ESTA LISTO
 
   }
+
   ngOnInit() {
-  //AQUI SI ESTA LISTO EL COMPONENTE
+    //AQUI SI ESTA LISTO EL COMPONENTE
     this._http
       .get("http://localhost:1337/Usuario/")
       .subscribe(
-        respuesta=>{
-          let rjson:UsuarioClass[] = respuesta.json();
+        respuesta => {
+          let rjson: UsuarioClass[] = respuesta.json();
           //const rjson: UsuarioClass[] = respuesta.json();
-          this.usuarios = rjson;
+          this.usuarios = rjson.map(
+            (usuario)=>{
+              //cambiar el usuario
+              usuario.editar = false;
+              return usuario;
 
-          console.log("Usuarios: ",this.usuarios);
+            }
+          );
+          /*
+           let objeto1:any={
+           prop1:1,
+           prop2:2
+           }
+           objeto1.prop3=3;
+           */
+
+          console.log("Usuarios: ", this.usuarios);
         },
-        error=>{
-          console.log("Error: ",error)
+        error => {
+          console.log("Error: ", error)
 
         }
       );
@@ -84,58 +99,58 @@ export class InicioComponent implements OnInit {
 
   }
 
-  cargarPlanetas(){
+  cargarPlanetas() {
     this._http
       .get("http://swapi.co/api/planets")
       //.map(response=>response.json())
       .subscribe(
-        (response)=>{
-          console.log("Response:",response);
+        (response) => {
+          console.log("Response:", response);
           console.log(response.json());
-          let respuesta=response.json();
+          let respuesta = response.json();
           console.log(respuesta.next);
-          this.planetas=respuesta.results;
+          this.planetas = respuesta.results;
 
-            this.planetas=this.planetas.map(
-              (planeta)=>{
-                planeta.imagenURL="/assets/Imagenes/"+planeta.name+'.jpg';
+          this.planetas = this.planetas.map(
+            (planeta) => {
+              planeta.imagenURL = "/assets/Imagenes/" + planeta.name + '.jpg';
 
-                return planeta;
-              }
-            );
-          },
-        (error)=>{
-          console.log("Response:",error);
+              return planeta;
+            }
+          );
         },
-        ()=>{
+        (error) => {
+          console.log("Response:", error);
+        },
+        () => {
           console.log("finally");
         }
       )
   }
 
 
-  crearUsuario(){
+  crearUsuario() {
     console.log("Entro a crear Usuario");
-    let usuario : UsuarioClass = {
-      nombre:this.nuevoUsuario.nombre
+    let usuario: UsuarioClass = {
+      nombre: this.nuevoUsuario.nombre
     }
     this._http
-      .post("http://localhost:1337/Usuario/",usuario)
+      .post("http://localhost:1337/Usuario/", usuario)
       .subscribe(
-        respuesta =>{
+        respuesta => {
           console.log(respuesta);
           this.usuarios.push(respuesta.json());
-          this.nuevoUsuario={};
+          this.nuevoUsuario = {};
 
         },
-        error=>{
-          console.log("Error",error);
+        error => {
+          console.log("Error", error);
         }
       );
 
   }
 
-  eliminarUsuario(usuario:UsuarioClass, indice: number){
+  eliminarUsuario(usuario: UsuarioClass, indice: number) {
 
 
     this._http.delete(`http://localhost:1337/Usuario/${usuario.id}`)
@@ -151,9 +166,34 @@ export class InicioComponent implements OnInit {
           console.log("Error", error);
         }
       );
-
-
   }
 
-}
+    actualizarUsuario(usuario:UsuarioClass,nombre:string)
+    {
+      let actualizacion = {
+        nombre: usuario.nombre
+    };
+      this._http.put("http://localhost:1337/Usuario/" + usuario.id, actualizacion)
+        .map(
+          (res)=>{
+            //sniippet ->templade de codigo para
+            //reutilizarlo
+
+            return res.json();
+    })
+  .subscribe(
+    res=>{
+      //el servidor nos dice que se actualizo
+    console.log("El usuario se actualizo",res)
+      let indice=this.usuarios.indexOf(usuario);
+      this.usuarios[indice].nombre=nombre;
+      this.usuarios[indice].editar=this.usuarios[indice].editar;
+      },
+    err=>{
+    //Hubo algun problema(Red servidor)
+    console.log("Hubo algun error",err);
+    }
+  );
+    }
+  }
 

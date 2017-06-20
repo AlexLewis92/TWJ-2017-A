@@ -4,10 +4,22 @@
     "edificio": [],
     "usuario": [
       {
+        "nombre": "jose",
+        "createdAt": "2017-06-20T20:30:05.770Z",
+        "updatedAt": "2017-06-20T21:51:33.753Z",
+        "id": 19
+      },
+      {
         "nombre": "Dario",
-        "createdAt": "2017-04-26T19:56:59.618Z",
-        "updatedAt": "2017-04-26T19:56:59.618Z",
-        "id": 2
+        "createdAt": "2017-06-20T20:30:12.387Z",
+        "updatedAt": "2017-06-20T21:19:32.470Z",
+        "id": 20
+      },
+      {
+        "nombre": "dario",
+        "createdAt": "2017-06-20T20:30:16.350Z",
+        "updatedAt": "2017-06-20T20:48:52.265Z",
+        "id": 21
       }
     ]
   },
@@ -68,7 +80,7 @@
     "casa": {},
     "edificio": {},
     "usuario": {
-      "id": 14
+      "id": 23
     }
   }
 }
