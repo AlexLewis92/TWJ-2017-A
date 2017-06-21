@@ -18,6 +18,9 @@ import { TerrainComponent } from './Componentes/terrain/terrain.component';
 import { UsuarioComponent } from './Componentes/usuario/usuario.component';
 import { Pagina2Component } from './Componentes/pagina2/pagina2.component';
 import {ModuloDeRutas} from "./routes";
+import { Pagina21Component } from './Componentes/pagina21/pagina21.component';
+import { Pagina22Component } from './Componentes/pagina22/pagina22.component';
+import { Pagina23Component } from './Componentes/pagina23/pagina23.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import {ModuloDeRutas} from "./routes";
     OrbitalPeriodComponent,
     TerrainComponent,
     UsuarioComponent,
-    Pagina2Component
+    Pagina2Component,
+    Pagina21Component,
+    Pagina22Component,
+    Pagina23Component
   ],
   imports: [
     BrowserModule,

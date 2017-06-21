@@ -1,3 +1,18 @@
-<p>
-  pagina2 works!
-</p>
+<h3>pagina 2 header</h3>
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      <li>
+        <a [routerLink]="['pagina21',2]">Pagina21</a>
+      </li>
+      <li>
+        <a [routerLink]="['pagina22','Dario']">pagina22</a>
+      </li>
+      <li>
+        <a [routerLink]="['pagina23',2313]">pagina23</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6"><router-outlet></router-outlet></div>
+</div>
+<h3>pagina2 footer</h3>
