@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class Pagina21Component implements OnInit {
 
-  constructor(private router: Router,
+  constructor(private _router: Router,
     private rutaActiva:ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,5 +25,7 @@ export class Pagina21Component implements OnInit {
       }
     )
   }
-
+  navegarAInicio(){
+    this._router.navigate(["pagina2",12,"pagina3",21,"pagina22",123])
+  }
 }
