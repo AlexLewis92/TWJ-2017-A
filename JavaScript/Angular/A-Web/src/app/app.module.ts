@@ -16,6 +16,8 @@ import { GravityComponent } from './Componentes/gravity/gravity.component';
 import { OrbitalPeriodComponent } from './Componentes/orbital-period/orbital-period.component';
 import { TerrainComponent } from './Componentes/terrain/terrain.component';
 import { UsuarioComponent } from './Componentes/usuario/usuario.component';
+import { Pagina2Component } from './Componentes/pagina2/pagina2.component';
+import {ModuloDeRutas} from "./routes";
 
 @NgModule({
   declarations: [
@@ -30,16 +32,18 @@ import { UsuarioComponent } from './Componentes/usuario/usuario.component';
     GravityComponent,
     OrbitalPeriodComponent,
     TerrainComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    Pagina2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ModuloDeRutas
   ],
   providers: [],
 
-  bootstrap: [InicioComponent]
+  bootstrap: [AppComponent]
 
 
 })
