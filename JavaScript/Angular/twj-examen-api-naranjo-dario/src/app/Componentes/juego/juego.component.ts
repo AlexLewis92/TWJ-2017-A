@@ -11,10 +11,10 @@ export class JuegoComponent implements OnInit {
 
   @Input() juego:juegoInterface;
   constructor(private _http: Http) {
-  }
+}
 
-  ngOnInit() {
-  }
+ngOnInit() {
+}
 
 
 

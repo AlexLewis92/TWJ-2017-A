@@ -58,7 +58,7 @@ export class InicioComponent implements OnInit {
           let rjson: UsuarioClass[] = respuesta.json();
           //const rjson: UsuarioClass[] = respuesta.json();
           this.usuarios = rjson.map(
-            (usuario)=>{
+            (usuario:UsuarioClass)=>{
               //cambiar el usuario
               usuario.editar = false;
               return usuario;
@@ -131,16 +131,16 @@ export class InicioComponent implements OnInit {
 
   crearUsuario() {
     console.log("Entro a crear Usuario");
-    let usuario: UsuarioClass = {
+    /*let usuario: UsuarioClass = {
       nombre: this.nuevoUsuario.nombre
-    }
+    }*/
     this._http
-      .post("http://localhost:1337/Usuario/", usuario)
+      .post("http://localhost:1337/Usuario/",this.nuevoUsuario)
       .subscribe(
         respuesta => {
           console.log(respuesta);
           this.usuarios.push(respuesta.json());
-          this.nuevoUsuario = {};
+          this.nuevoUsuario = new UsuarioClass();
 
         },
         error => {
@@ -150,10 +150,12 @@ export class InicioComponent implements OnInit {
 
   }
 
-  eliminarUsuario(usuario: UsuarioClass, indice: number) {
+  eliminarUsuario(usuario:UsuarioClass) {
 
+    let indice = this.usuarios.indexOf(usuario);
+    this.usuarios.splice(indice,1)
 
-    this._http.delete(`http://localhost:1337/Usuario/${usuario.id}`)
+    /*this._http.delete(`http://localhost:1337/Usuario/${usuario.id}`)
       .subscribe(
         respuesta => {
           console.log('Indice con index: ', usuario.id);
@@ -165,10 +167,10 @@ export class InicioComponent implements OnInit {
         error => {
           console.log("Error", error);
         }
-      );
+      );*/
   }
 
-    actualizarUsuario(usuario:UsuarioClass,nombre:string)
+   /* actualizarUsuario(usuario:UsuarioClass,nombre:string)
     {
       let actualizacion = {
         nombre: usuario.nombre
@@ -194,6 +196,5 @@ export class InicioComponent implements OnInit {
     console.log("Hubo algun error",err);
     }
   );
-    }
+    }*/
   }
-

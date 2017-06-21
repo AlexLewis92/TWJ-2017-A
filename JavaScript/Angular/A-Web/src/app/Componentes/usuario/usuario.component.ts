@@ -1,8 +1,8 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component,EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UsuarioClass} from "../../Clases/UsuarioClass";
 import {Http} from "@angular/http";
-import {EventEmitter} from "selenium-webdriver";
-import {emit} from "cluster";
+
+
 
 @Component({
   selector: 'app-usuario',
@@ -10,7 +10,7 @@ import {emit} from "cluster";
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-  @Input () usuarioLocal:UsuarioClass;ç
+  @Input () usuarioLocal:UsuarioClass;
   @Output() usuarioborrado=new EventEmitter();
   constructor(private _http:Http) { }
 
@@ -19,12 +19,12 @@ export class UsuarioComponent implements OnInit {
   eliminarUsuario(usuario: UsuarioClass, indice: number) {
 
 
-    this._http.delete(`http://localhost:1337/Usuario/${usuario.id}`)
+    this._http.delete("http://localhost:1337/Usuario/"+usuario.id)
       .subscribe(
         respuesta => {
           console.log('Indice con index: ', usuario.id);
 
-          this.usuarioborrado = emit(usuario);
+          this.usuarioborrado.emit(usuario);
          // this.usuarioLocal = this.usuarioLocal.filter(value => usuarioBorrado.id != value.id);
 
         },
@@ -55,7 +55,7 @@ export class UsuarioComponent implements OnInit {
           //this.usuarios[indice].nombre=nombre;
           //this.usuarios[indice].editar=this.usuarios[indice].editar;
           this.usuarioLocal.nombre=nombre;
-          this.usuarioLocal.editar=!this.usuarioLocal.editar;
+          this.usuarioLocal.editar = !this.usuarioLocal.editar;
 
         },
         err=>{

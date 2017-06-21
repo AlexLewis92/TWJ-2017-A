@@ -10,16 +10,16 @@
         "id": 19
       },
       {
-        "nombre": "Dario",
-        "createdAt": "2017-06-20T20:30:12.387Z",
-        "updatedAt": "2017-06-20T21:19:32.470Z",
-        "id": 20
+        "nombre": "alex",
+        "createdAt": "2017-06-21T17:09:43.662Z",
+        "updatedAt": "2017-06-21T17:09:43.662Z",
+        "id": 24
       },
       {
-        "nombre": "dario",
-        "createdAt": "2017-06-20T20:30:16.350Z",
-        "updatedAt": "2017-06-20T20:48:52.265Z",
-        "id": 21
+        "nombre": "Juan",
+        "createdAt": "2017-06-21T17:09:53.276Z",
+        "updatedAt": "2017-06-21T17:09:53.276Z",
+        "id": 25
       }
     ]
   },
@@ -80,7 +80,7 @@
     "casa": {},
     "edificio": {},
     "usuario": {
-      "id": 23
+      "id": 25
     }
   }
 }
