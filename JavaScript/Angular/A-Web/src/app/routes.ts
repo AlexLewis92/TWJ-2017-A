@@ -1,7 +1,8 @@
 import {RouterModule, Routes} from "@angular/router";
-import {InicioComponent} from "../../../twj-examen-api-naranjo-dario/src/app/Componentes/inicio/inicio.component";
+
 import {Pagina2Component} from "./Componentes/pagina2/pagina2.component";
 import {ModuleWithProviders} from "@angular/core";
+import {InicioComponent} from "./Componentes/inicio/inicio.component";
 /**
  * Created by USRDEL on 21/6/17.
  */
