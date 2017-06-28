@@ -2,26 +2,17 @@
   "data": {
     "casa": [],
     "edificio": [],
+    "mascota": [],
+    "raza": [],
     "usuario": [
       {
         "nombre": "jose",
         "createdAt": "2017-06-20T20:30:05.770Z",
         "updatedAt": "2017-06-20T21:51:33.753Z",
         "id": 19
-      },
-      {
-        "nombre": "alex",
-        "createdAt": "2017-06-21T17:09:43.662Z",
-        "updatedAt": "2017-06-21T17:09:43.662Z",
-        "id": 24
-      },
-      {
-        "nombre": "Juan",
-        "createdAt": "2017-06-21T17:09:53.276Z",
-        "updatedAt": "2017-06-21T17:09:53.276Z",
-        "id": 25
       }
-    ]
+    ],
+    "usuariomascota": []
   },
   "schema": {
     "casa": {
@@ -58,9 +49,81 @@
         "type": "datetime"
       }
     },
+    "mascota": {
+      "nombre": {
+        "type": "string"
+      },
+      "idRaza": {
+        "type": "integer",
+        "model": "raza",
+        "foreignKey": true,
+        "alias": "idRaza"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "raza": {
+      "nombre": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "usuario": {
       "nombre": {
         "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "usuariomascota": {
+      "idUsuario": {
+        "type": "integer",
+        "model": "usuario",
+        "foreignKey": true,
+        "alias": "idUsuario"
+      },
+      "idMascota": {
+        "type": "integer",
+        "model": "mascota",
+        "foreignKey": true,
+        "alias": "idMascota"
+      },
+      "fechaDeInicioAdopcion": {
+        "type": "date"
+      },
+      "fechaDeFinalizacionAdopcion": {
+        "type": "date"
       },
       "id": {
         "type": "integer",
@@ -81,6 +144,9 @@
     "edificio": {},
     "usuario": {
       "id": 25
-    }
+    },
+    "mascota": {},
+    "raza": {},
+    "usuariomascota": {}
   }
 }
