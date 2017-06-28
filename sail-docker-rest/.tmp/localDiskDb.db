@@ -10,6 +10,20 @@
         "createdAt": "2017-06-20T20:30:05.770Z",
         "updatedAt": "2017-06-20T21:51:33.753Z",
         "id": 19
+      },
+      {
+        "nombre": "dario",
+        "correo": "as@hotmail.con",
+        "createdAt": "2017-06-28T19:34:47.605Z",
+        "updatedAt": "2017-06-28T19:34:47.605Z",
+        "id": 26
+      },
+      {
+        "nombre": "alex",
+        "correo": "dn@gmail.com",
+        "createdAt": "2017-06-28T19:39:23.940Z",
+        "updatedAt": "2017-06-28T19:39:23.940Z",
+        "id": 27
       }
     ],
     "usuariomascota": []
@@ -93,6 +107,9 @@
       "nombre": {
         "type": "string"
       },
+      "correo": {
+        "type": "string"
+      },
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -143,7 +160,7 @@
     "casa": {},
     "edificio": {},
     "usuario": {
-      "id": 25
+      "id": 27
     },
     "mascota": {},
     "raza": {},
